@@ -1,38 +1,23 @@
-// import React from "react";
-// import { CheckCircle, AlertCircle } from "lucide-react";
-
-// const ResidentDashboard: React.FC = () => {
-//   return (
-//     <div className="space-y-6">
-//       <h2 className="text-2xl font-bold text-gray-800">Resident Dashboard</h2>
-//       <div className="p-6 bg-white rounded-lg shadow-md">
-//         <CheckCircle className="h-6 w-6 text-green-500 mb-2" />
-//         <p className="font-semibold">Access Granted</p>
-//       </div>
-//       <div className="p-6 bg-white rounded-lg shadow-md">
-//         <AlertCircle className="h-6 w-6 text-red-500 mb-2" />
-//         <p className="font-semibold">Security Alerts</p>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default ResidentDashboard;
-
-
 import React from "react";
 import { UserPlus, Clock, ShieldAlert, CheckCircle, ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import Breadcrumb from "../common/Breadcrumb";
 
 const ResidentDashboard: React.FC = () => {
+  const navigate = useNavigate(); // ✅ this hook gives us the navigate function
   return (
     <div className="space-y-8 p-6 bg-gray-100 min-h-screen">
+      
       <h2 className="text-3xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2">
         Resident Dashboard
       </h2>
-
-      {/* Quick Actions Section */}
+<Breadcrumb /> {/* 👈 Added here */}
+        {/* Quick Actions Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div className="p-6 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
+        <div
+          onClick={() => navigate("/manage-visitors")}
+          className="p-6 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer"
+        >
           <UserPlus className="h-12 w-12 text-blue-600 mb-3" />
           <p className="font-semibold text-lg">Manage Visitors</p>
           <p className="text-sm text-gray-500">Add or remove guests</p>
