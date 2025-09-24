@@ -1,15 +1,18 @@
-
 import React from "react";
 import { Users, UserPlus, ClipboardList, TrendingUp } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import Breadcrumb from "../common/Breadcrumb";
 
 const AdminDashboard: React.FC = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="space-y-8 p-6 bg-gray-100 min-h-screen">
       <h2 className="text-3xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2">
         Admin Dashboard
       </h2>
-      <Breadcrumb /> {/* 👈 Added here */}
+      <Breadcrumb />
+
       {/* Stats Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="p-6 bg-white rounded-xl shadow-lg flex items-center justify-between transition-transform duration-300 hover:scale-105">
@@ -47,15 +50,29 @@ const AdminDashboard: React.FC = () => {
         <div className="lg:col-span-2 space-y-6">
           <h3 className="text-xl font-semibold text-gray-700">Quick Actions</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
+            {/* Manage Residents */}
+            <div
+              onClick={() => navigate("/admin/manage-residents")}
+              className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer"
+            >
               <Users className="h-12 w-12 text-blue-500 mb-4" />
               <p className="font-semibold text-lg">Manage Residents</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
+
+            {/* Manage Visitors */}
+            <div
+              onClick={() => navigate("/admin/manage-visitors")}
+              className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer"
+            >
               <UserPlus className="h-12 w-12 text-green-500 mb-4" />
               <p className="font-semibold text-lg">Manage Visitors</p>
             </div>
-            <div className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
+
+            {/* Entry Logs */}
+            <div
+              onClick={() => navigate("/admin/entry-logs")}
+              className="p-6 bg-white rounded-lg shadow-md flex flex-col items-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer"
+            >
               <ClipboardList className="h-12 w-12 text-purple-500 mb-4" />
               <p className="font-semibold text-lg">View Entry Logs</p>
             </div>
