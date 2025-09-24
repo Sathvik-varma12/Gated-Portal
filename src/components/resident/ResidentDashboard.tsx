@@ -188,7 +188,7 @@ const ResidentDashboard: React.FC = () => {
             className="p-6 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer"
           >
             <UserPlus className="h-12 w-12 text-blue-600 mb-3" />
-            <p className="font-semibold text-lg">Manage Visitors</p>
+            <p className="font-semibold text-lg">Visitors</p>
             <p className="text-sm text-gray-500">Add or remove guests</p>
           </div>
           <div className="p-6 bg-white rounded-xl shadow-lg flex flex-col items-center justify-center text-center transition-transform duration-300 hover:scale-105 cursor-pointer">
