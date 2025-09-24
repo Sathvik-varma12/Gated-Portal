@@ -9,10 +9,9 @@ const AdminDashboard: React.FC = () => {
   return (
     <div className="space-y-8 p-6 bg-gray-100 min-h-screen">
       <h2 className="text-3xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2">
-        Admin Dashboard
+        Dashboard
       </h2>
       <Breadcrumb />
-
       {/* Stats Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="p-6 bg-white rounded-xl shadow-lg flex items-center justify-between transition-transform duration-300 hover:scale-105">

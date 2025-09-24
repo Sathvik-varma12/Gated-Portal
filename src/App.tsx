@@ -4,8 +4,8 @@ import Login from "./components/auth/Login";
 import AdminDashboard from "./components/admin/AdminDashboard";
 import ResidentDashboard from "./components/resident/ResidentDashboard";
 import Visitors from "./components/resident/Visitors";
-// import ManageVisitors from "./components/admin/ManageVisitors";
-// import ManageResidents from "./components/admin/ManageResidents";
+import ManageVisitors from "./components/admin/ManageVisitors";
+import ManageResidents from "./components/admin/ManageResidents";
 
 function App() {
   return (
@@ -16,8 +16,8 @@ function App() {
 
         {/* Dashboards */}
         <Route path="/admin" element={<AdminDashboard />} />
-          {/* <Route path="/admin/manage-visitors" element={<ManageVisitors/>} /> */}
-          {/* <Route path="/admin/manage-residents" element={<ManageResidents/>} /> */}
+          <Route path="/admin/manage-visitors" element={<ManageVisitors/>} />
+          <Route path="/admin/manage-residents" element={<ManageResidents/>} />
         <Route path="/resident" element={<ResidentDashboard />} />
           <Route path="/resident/visitors" element={<Visitors/>} />
           
