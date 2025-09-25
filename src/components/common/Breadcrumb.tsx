@@ -5,11 +5,18 @@ const Breadcrumb: React.FC = () => {
   const location = useLocation();
   const pathnames = location.pathname.split("/").filter((x) => x);
 
+  // 👇 detect role from the URL
+  const isAdmin = location.pathname.startsWith("/admin");
+  const isResident = location.pathname.startsWith("/resident");
+
+  // 👇 set Home link based on role
+  const homePath = isAdmin ? "/admin" : isResident ? "/resident" : "/";
+
   return (
     <nav className="text-gray-600 mb-6">
       <ol className="flex items-center space-x-2">
         <li>
-          <Link to="/" className="text-blue-600 hover:underline">
+          <Link to={homePath} className="text-blue-600 hover:underline">
             Home
           </Link>
         </li>
